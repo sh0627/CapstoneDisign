@@ -6,6 +6,7 @@
 > - 핵심 역할 : 팀원, Firebase를 이용한 환자 로그인, 정보, 환자 요청사항 페이지 구현
 >   
 >> - Language : HTML, CSS, JavaScript
+>> - IDE : Visual Studio Code
 >> - Skill : Firebase
 >>
 > <br/>
@@ -17,7 +18,8 @@
 > - login.html <br/><br/><br/>
 >   ![image](https://github.com/user-attachments/assets/c74c8b40-29e9-488a-b81d-312da5638db5) 
 >  <br/><br/>
-> 데이터베이스에 있는 환자 고유번호(아이디) 및 비밀번호를 입력해야지 다음 페이지로 넘어갈 수 있도록 로그인 기능을 구현
+> Firebase SDK를 script에 추가하여 Firebase store 내의 데이터와 비교하여
+> 데이터베이스(FireBase store)에 있는 환자 고유번호(아이디) 및 비밀번호를 입력해야지 다음 페이지로 넘어갈 수 있도록 로그인 기능을 구현
 >  <br/><br/><br/><br/>
 > - information.html <br/><br/><br/>
 >  ![image](https://github.com/user-attachments/assets/304ce2da-4ca4-4d4c-8859-9ecee5251c5c)
