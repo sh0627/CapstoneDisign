@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>로그인</title>
+  <link rel="stylesheet" href="./login.css">
+</head>
+<!-- 로그인 구현 -->
+<body>
+    <div class = "box">
+        <h1>로그인</h1>
+        <div class="form_group">
+          <label for="id">환자번호</label>
+            <input type="text" id="pid" name="pid" onblur="hideNumpad()">
+        </div>
+        <div class="form_group">
+          <label for="pw">비밀번호
+            <input type="text" id="ppw" name="ppw">
+          </label>
+        </div>
+        <input type="submit" value="로그인" class="sub" id="submit">
+  
+    </div>
+    </form>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+      import { getFirestore, query, where, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+      
+      // Firebase SDK
+      const firebaseConfig = {
+        apiKey: "AIzaSyBt6CmvyB6bIR48AnjNky2l0U8o36ex-bE",
+        authDomain: "dowajo2-743ab.firebaseapp.com",
+        projectId: "dowajo2-743ab",
+        storageBucket: "dowajo2-743ab.appspot.com",
+        messagingSenderId: "925578891959",
+        appId: "1:925578891959:web:71b55eaf40acdac6bdb332",
+        measurementId: "G-B1XJR7KBVV"
+      };
+    
+      // Firebase 초기화
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      
+      // 로그인 버튼을 눌렀을 때, 입력한 아이디, 비밀번호를
+      // 저장된 데이터베이스 내의 아이디, 비밀번호와 비교하여 같다면 information.html(환자 정보 페이지) 으로 이동
+      document.getElementById("submit").addEventListener('click', async function(e) {
+        e.preventDefault();
+        
+        const pid = document.getElementById('pid').value;
+        const ppw = document.getElementById('ppw').value;
+
+        const patientRef = collection(db, "Patient");
+        const q = query(patientRef, where("id", "==", pid), where("pw", "==", ppw));
+        
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          window.location.href = "information.html?"+pid+"?"+ppw;
+        });
+      })
+
+      
+    </script>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="./button.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="clock.css">
+  <script src="clock.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> 
+    
+    <title>Ionic Modal</title>
+
+    <link href="https://code.ionicframework.com/1.0.0-beta.11/css/ionic.css" rel="stylesheet">
+    <script src="https://code.ionicframework.com/1.0.0-beta.11/js/ionic.bundle.js"></script>
+  </head>
+  <body style="background-color: rgb(255, 255, 255);">
+    
+    <br>
+    <div>
+      <div id="time" class="time"></div>
+      <br>
+      <div id="date" class="date"></div>
+    </div>
+    <hr width="100%" color="black" noshade/>
+
+    <!-- 환자 요청사항을 버튼으로 구현 -->
+
+    <button onclick="history.back()"> 
+      <i class="fa-solid fa-arrow-left-long"></i>
+    </button>
+      <div class = "row">
+        <div class ="col-xs">                    
+          <button class="button button-large button-full idpro-button-full" id="water" value="물">
+            <i class="fa-solid fa-glass-water"></i><br>
+            물
+          </button>          
+        </div>
+        
+        <div class ="col-xs"> 
+          <button class="button button-large button-full  idpro-button-full" id="pill" value="약">
+            <i class="fa-solid fa-pills"></i><br>
+            약
+          </button>
+        </div>        
+        <div class ="col-xs"> 
+          <button class="button button-large button-full  idpro-button-full" id="food" value="식사">
+            <i class="fa-solid fa-bowl-food"></i><br>
+            식사
+          </button>
+       </div>
+       <div class ="col-xs">        
+        <button class="button button-large button-full  idpro-button-full" id="shower" value="목욕">
+          <i class="fa-solid fa-shower"></i><br>
+          목욕
+        </button>           
+       </div> 
+       <div class ="col-xs">         
+         <button class="button button-large button-full  idpro-button-full" id="sick" value="통증">
+          <i class="fa-solid fa-head-side-virus"></i><br>
+           통증
+         </button>          
+       </div>  
+      </div>   
+
+      <div class = "row">
+        <div class ="col-xs">                    
+          <button class="button button-large button-full  idpro-button-full" id="sap" value="수액">
+            <i class="fa-solid fa-syringe"></i><br>
+            수액
+          </button>          
+        </div>
+        
+        <div class ="col-xs"> 
+          <button class="button button-large button-full idpro-button-full" id="check" value="건강 상태 체크">
+            <i class="fa-solid fa-user-check"></i><br>
+            건강 상태 체크
+          </button>
+        </div>        
+        <div class ="col-xs"> 
+          <button class="button button-large button-full  idpro-button-full" id="blood" value="혈압 측정">
+            <i class="fa-solid fa-droplet"></i><br>
+            혈압 측정
+          </button>
+       </div>
+       <div class ="col-xs">        
+        <button class="button button-large button-full idpro-button-full" id="physiotherapy" value="물리 치료">
+          <i class="fa-solid fa-people-robbery"></i><br>
+          물리 치료
+        </button>           
+       </div> 
+       <div class ="col-xs">         
+         <button class="button button-large button-full  idpro-button-full" id="psychotherapy" value="심리 치료">
+          <i class="fa-solid fa-user-group"></i><br>
+           심리 치료
+         </button>          
+       </div>  
+      </div>   
+
+      <div class = "row">
+        <div class ="col-xs">                    
+          <button class="button button-large button-full  idpro-button-full" id="doctor" value="의사 진료 희망">
+            <i class="fa-solid fa-user-doctor"></i><br>
+            의사 진료 희망
+          </button>          
+        </div>
+        
+        <div class ="col-xs"> 
+          <button class="button button-large button-full idpro-button-full" id="bed" value="침대 정리">
+            <i class="fa-solid fa-bed"></i><br>
+            침대 정리
+          </button>
+        </div>        
+        <div class ="col-xs"> 
+          <button class="button button-large button-full idpro-button-full" id="temperature" value="온도 조절">
+            <i class="fa-solid fa-temperature-three-quarters"></i><br>
+            온도 조절
+          </button>
+       </div>
+       <div class ="col-xs">        
+        <button class="button button-large button-full idpro-button-full" id="consulting" value="상담">
+          <i class="fa-solid fa-people-arrows"></i><br>
+          상담
+        </button>           
+       </div> 
+       <div class ="col-xs">         
+         <button class="button button-large button-full button-assertive idpro-button-full" id="bell" value="긴급 호출">
+          <i class="fa-solid fa-bell"></i><br>
+           긴급 호출
+         </button>          
+       </div>  
+      </div>   
+    <script type="module">
+      
+      
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+      import { getDatabase, ref, set, get, child  } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+  
+      const firebaseConfig = {
+        apiKey: "AIzaSyBt6CmvyB6bIR48AnjNky2l0U8o36ex-bE",
+        authDomain: "dowajo2-743ab.firebaseapp.com",
+        databaseURL: "https://dowajo2-743ab-default-rtdb.firebaseio.com",
+        projectId: "dowajo2-743ab",
+        storageBucket: "dowajo2-743ab.appspot.com",
+        messagingSenderId: "925578891959",
+        appId: "1:925578891959:web:71b55eaf40acdac6bdb332",
+        measurementId: "G-B1XJR7KBVV"
+      };
+    
+      // Firebase 초기화
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      const receivedId = location.href.split('?')[1];
+      console.log(receivedId);
+
+      const receivedPw = location.href.split('?')[2];
+      console.log(receivedPw);
+
+      // 35 ~ 139줄로 구현한 버튼을 누를 때 마다
+      // 버튼의 value 값을 Firebase의 실시간 데이터베이스에 전달하여
+      // Flutter 담당 팀원도 데이터값을 쓸 수 있도록 함
+
+        document.getElementById("water").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("water").value,
+        })
+        alert("물을 호출했습니다");
+        })
+
+        document.getElementById("pill").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("pill").value,
+        })
+        alert("약을 호출했습니다");
+        })
+
+        document.getElementById("food").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("food").value,
+        })
+        alert("식사를 호출했습니다");
+        })
+
+        document.getElementById("shower").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("shower").value,
+        })
+        alert("목욕을 호출했습니다");
+        })
+
+        document.getElementById("sick").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("sick").value,
+        })
+        alert("통증으로 인해 호출했습니다");
+        })
+        
+        document.getElementById("sap").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("sap").value,
+        })
+        alert("수액을 호출했습니다");
+        })
+
+        document.getElementById("check").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("check").value,
+        })
+        alert("건강 상태 체크를 호출했습니다");
+        })
+
+        document.getElementById("blood").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("blood").value,
+        })
+        alert("혈압 측정을 호출했습니다");
+        })
+
+        document.getElementById("physiotherapy").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("physiotherapy").value,
+        })
+        alert("물리 치료를 호출했습니다");
+        })
+
+        document.getElementById("psychotherapy").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("psychotherapy").value,
+        })
+        alert("심리 치료를 호출했습니다");
+        })
+
+        document.getElementById("doctor").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("doctor").value,
+        })
+        alert("의사 진료 희망을 호출했습니다");
+        })
+
+        document.getElementById("bed").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("bed").value,
+        })
+        alert("침대 정리를 호출했습니다");
+        })
+
+        document.getElementById("temperature").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("temperature").value,
+        })
+        alert("온도 조절를 호출했습니다");
+        })
+
+        document.getElementById("consulting").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("consulting").value,
+        })
+        alert("상담을 호출했습니다");
+        })
+
+        document.getElementById("bell").addEventListener('click',function(e) {
+        e.preventDefault();
+        set(ref(db, receivedId),
+        {
+            userRequire: document.getElementById("bell").value,
+        })
+        alert("긴급 호출을 호출했습니다");
+        })
+
+    </script>
+    
+    
+  </body>
+</html>
+<!-- partial -->
+  <script  src="./button.js"></script>
+</body>
+</html>

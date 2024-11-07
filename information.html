@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+  <link rel="stylesheet" href="./button.css">
+  <link rel="stylesheet" href="clock.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link href="https://code.ionicframework.com/1.0.0-beta.11/css/ionic.css" rel="stylesheet">
+  <script src="https://code.ionicframework.com/1.0.0-beta.11/js/ionic.bundle.js"></script>
+  <script src="clock.js"></script>
+</head>
+<body>
+<!-- 시간 표시 -->
+<html ng-app="ionicApp">
+    <br>
+    <div>
+      <div id="time" class="time"></div>
+      <br>
+      <div id="date" class="date"></div>
+    </div>
+    <hr width="100%" color="black" noshade/>
+  
+    <button onclick="history.back()"> 
+      <i class="fa-solid fa-arrow-left-long"></i>
+    </button>
+    
+    <!-- Firebase에 저장된 데이터베이스 내에서 환자의 정보를 불러와서 html에 표시 -->
+
+    <br>
+    <div style="margin-left: 50px;">
+      <img src="" id="patient-image" alt="Patient Image" width="250" height="350">
+    </div>
+    <div style="margin-left : 50px; float : left; border: 3px solid; width: 270px; height: 350px; border-radius:20px; text-align : center;">
+        <br><br><br>
+        <p style="font-size:20px"><b>이름: <span id="patient-name"></span></b></p>
+        <br>
+        <p style="font-size:20px"><b>생일: <span id="patient-birthday"></span></b></p>
+        <br>
+        <p style="font-size:20px"><b>성별: <span id="patient-gender"></span></b></p>
+        <br>
+        <p style="font-size:20px"><b>질병: <span id="patient-illness"></span></b></p>
+        <br>
+        <p style="font-size:20px"><b>병실: <span id="patient-room"></span>호</b></p>
+    </div>
+    <div style="margin-left: 50px; float: left">
+      <div class ="col-xs">                    
+        <button class="button button-large button-full idpro2-button-full" id="hand">
+          <i class="fa-regular fa-hand fa-2x"></i><br>
+          호출
+        </button>          
+      </div>
+    </div>
+  
+  
+    <script type="module">
+      
+      
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+      import { getFirestore, query, where, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+  
+      const firebaseConfig = {
+        apiKey: "AIzaSyBt6CmvyB6bIR48AnjNky2l0U8o36ex-bE",
+        authDomain: "dowajo2-743ab.firebaseapp.com",
+        projectId: "dowajo2-743ab",
+        storageBucket: "dowajo2-743ab.appspot.com",
+        messagingSenderId: "925578891959",
+        appId: "1:925578891959:web:71b55eaf40acdac6bdb332",
+        measurementId: "G-B1XJR7KBVV"
+      };
+    
+      // Firebase 초기화
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      const receivedId = location.href.split('?')[1];
+      console.log(receivedId);
+
+      const receivedPw = location.href.split('?')[2];
+      console.log(receivedPw);
+
+      const patientRef = collection(db, "Patient");
+      const q = query(patientRef, where("id", "==", receivedId), where("pw", "==", receivedPw));
+      
+
+      // 환자의 정보를 데이터베이스 내에서 불러와 해당 Id에 맞게 표시
+      const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+        document.getElementById('patient-image').src = doc.data().picture;
+        document.getElementById('patient-name').textContent = doc.data().name;
+        document.getElementById('patient-birthday').textContent = doc.data().birth;
+        document.getElementById('patient-gender').textContent = doc.data().gender;
+        document.getElementById('patient-illness').textContent = doc.data().disease;
+        document.getElementById('patient-room').textContent = doc.data().room;
+      });
+      
+      // 다음 버튼을 누르면 button.html(환자 요청사항 페이지)로 이동
+      document.getElementById("hand").addEventListener('click',function(e) {
+        e.preventDefault();
+        window.location.href = "button.html?"+receivedId+"?"+receivedPw;
+        })
+
+    </script>
+    
+  </body>
+</html>
+</body>
+</html>
