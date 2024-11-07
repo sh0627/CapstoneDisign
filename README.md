@@ -10,4 +10,6 @@
 >> 
 <br />
 
-> ![image](https://github.com/user-attachments/assets/8d88647f-8f58-442a-a78b-16d6b9569987)
+> ![image](https://github.com/user-attachments/assets/b691832c-1338-4371-8c35-e226b4beb7a8)
+> 데이터베이스에 있는 환자 고유번호(아이디) 및 비밀번호를 입력해야지 다음 페이지로 넘어갈 수 있도록 로그인 기능을 구현
+
