@@ -9,7 +9,7 @@
 >> - Skill : Firebase
 >>
 >
->
+> - 프로젝트 내용
 >
 > ![캡처](https://github.com/user-attachments/assets/e52abd27-a9e3-412c-be93-cc64cefacb07)
 >
