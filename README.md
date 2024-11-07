@@ -16,7 +16,7 @@
 >  <br/>
 >> login.html
 >  <br/>
->  ![image](https://github.com/user-attachments/assets/c74c8b40-29e9-488a-b81d-312da5638db5) 
+>   ![image](https://github.com/user-attachments/assets/c74c8b40-29e9-488a-b81d-312da5638db5) 
 >  <br/>
 > 데이터베이스에 있는 환자 고유번호(아이디) 및 비밀번호를 입력해야지 다음 페이지로 넘어갈 수 있도록 로그인 기능을 구현
 >  <br/>
