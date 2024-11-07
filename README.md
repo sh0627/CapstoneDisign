@@ -13,7 +13,7 @@
 > - 프로젝트 내용
 >
 > ![캡처](https://github.com/user-attachments/assets/e52abd27-a9e3-412c-be93-cc64cefacb07)
->
+>  <br/>
 >  <br/>
 >  - login.html
 >  <br/>
@@ -27,7 +27,7 @@
 >  ![image](https://github.com/user-attachments/assets/304ce2da-4ca4-4d4c-8859-9ecee5251c5c)
 >
 >  로그인 이후 입력한 환자 고유번호를 통해 해당 환자의 정보(이름, 생일, 성별, 질병, 병실)을 화면에 출력, 또한 호출 버튼을 눌러 호출 페이지로 이동
->
+> <br/>
 > <br/>
 > - button.html
 > <br/>
