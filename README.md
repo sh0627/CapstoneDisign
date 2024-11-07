@@ -10,7 +10,8 @@
 >> 
 <br />
 >
-> ![image](https://github.com/user-attachments/assets/d28b62ac-f4b6-4907-8aa4-8e8ed4649065)
+> ![캡처](https://github.com/user-attachments/assets/e52abd27-a9e3-412c-be93-cc64cefacb07)
+
 >
 > ![image](https://github.com/user-attachments/assets/b691832c-1338-4371-8c35-e226b4beb7a8)
 > 
