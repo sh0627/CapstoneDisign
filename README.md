@@ -27,4 +27,10 @@
 > 
 > ![image](https://github.com/user-attachments/assets/2e2fffe1-52db-42ff-b2e1-212b3d1272b6)
 >
->  화면에 표시된 호출 목록을 통해 자신에게 처한 상황에 맞춰 필요한 호출을 버튼 터치를 통해 간호사 앱으로 알림을 보낼 수 있음
+>  화면에 표시된 호출 목록을 통해 자신에게 처한 상황에 맞춰 필요한 호출을 버튼 터치를 통해 실시간 데이터베이스로 보낼 수 있음
+>
+>  <br/>
+>
+>  ![image](https://github.com/user-attachments/assets/dc777cae-a395-41cf-b48b-64ca91b911f9)
+>
+>  해당 데이터베이스의 내용을 이용하여 앱에서 이 정보를 사용할 수 있게하여 앱으로 알림이 가도록 함
