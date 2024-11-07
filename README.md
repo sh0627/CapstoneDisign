@@ -22,4 +22,9 @@
 >  ![image](https://github.com/user-attachments/assets/304ce2da-4ca4-4d4c-8859-9ecee5251c5c)
 >
 >  로그인 이후 입력한 환자 고유번호를 통해 해당 환자의 정보(이름, 생일, 성별, 질병, 병실)을 화면에 출력, 또한 호출 버튼을 눌러 호출 페이지로 넘어갈 수 있음
-
+>
+> <br/>
+> <br/>
+> ![image](https://github.com/user-attachments/assets/2e2fffe1-52db-42ff-b2e1-212b3d1272b6)
+>
+>  화면에 표시된 호출 목록을 통해 자신에게 처한 상황에 맞춰 필요한 호출을 버튼 터치를 통해 간호사 앱으로 알림을 보낼 수 있음
