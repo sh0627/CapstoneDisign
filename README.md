@@ -11,22 +11,22 @@
 >>
 > <br/>
 >
-> - 프로젝트 내용
+> ## 프로젝트 내용
 >
 > ![캡처](https://github.com/user-attachments/assets/e52abd27-a9e3-412c-be93-cc64cefacb07)
 >  <br/><br/><br/><br/>
-> - login.html <br/><br/><br/>
+> ### - login.html <br/><br/><br/>
 >   ![image](https://github.com/user-attachments/assets/c74c8b40-29e9-488a-b81d-312da5638db5) 
 >  <br/><br/>
 > Firebase SDK를 script에 추가하여 Firebase store 내의 데이터와 비교하여
 > 데이터베이스(FireBase store)에 있는 환자 고유번호(아이디) 및 비밀번호를 입력해야지 다음 페이지로 넘어갈 수 있도록 로그인 기능을 구현
 >  <br/><br/><br/><br/>
-> - information.html <br/><br/><br/>
+> ### - information.html <br/><br/><br/>
 >  ![image](https://github.com/user-attachments/assets/304ce2da-4ca4-4d4c-8859-9ecee5251c5c)
 >  <br/><br/>
 >  로그인 이후 입력한 환자 고유번호를 통해 해당 환자의 정보(이름, 생일, 성별, 질병, 병실)을 화면에 출력, 또한 호출 버튼을 눌러 호출 페이지로 이동
 >  <br/><br/><br/><br/>
-> - button.html <br/><br/><br/>
+> ### - button.html <br/><br/><br/>
 > ![image](https://github.com/user-attachments/assets/2e2fffe1-52db-42ff-b2e1-212b3d1272b6)
 >  <br/><br/>
 >  화면에 표시된 호출 목록을 통해 자신에게 처한 상황에 맞춰 필요한 호출을 버튼 터치를 통해 실시간 데이터베이스로 전달
